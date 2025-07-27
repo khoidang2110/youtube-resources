@@ -14,6 +14,7 @@ Tài liệu và script đi kèm các video trên kênh YouTube của tôi – h�
 | [Tự host tại nhà](./self-hosted-server/README.md) | Hướng dẫn tự triển khai máy chủ tại nhà. |
 | [ChatGPT Prompt Manager](./chatgpt-prompt-manager/README.md) | Quản lý và tái sử dụng prompt hiệu quả. |
 | [Docker Port Controller](./docker-port-controller/README.md) | Tắt/mở port PostgreSQL tùy nhu cầu thao tác DB, tránh brute force, dữ liệu vẫn giữ bằng volume. |
+| [Traefik](./traefik/README.md) | Hướng dẫn cài đặt traefik. |
 
 ---
 
