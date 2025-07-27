@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  express:
+    build: .
+    container_name: express-product
+    ports:
+      - "8002:3000"
+    networks:
+      - pg-express
+
+networks:
+  pg-express:
+    external: true

@@ -1,0 +1,24 @@
+hostname: harbor.tichluyvang.com
+
+http:
+  port: 8080  # Dùng cổng nội bộ để tránh đụng NPM
+
+# ❌ KHÔNG cấu hình HTTPS ở đây
+# https:
+#   port: 443
+#   certificate: /your/certificate/path
+#   private_key: /your/private/key/path
+
+harbor_admin_password: Harbor12345
+
+database:
+  password: root123
+
+data_volume: /data
+
+log:
+  level: info
+  local:
+    rotate_count: 50
+    rotate_size: 200M
+    location: /var/log/harbor

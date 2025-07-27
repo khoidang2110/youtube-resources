@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  seq:
+    image: datalust/seq
+    container_name: seq
+    restart: always
+    environment:
+      - ACCEPT_EULA=Y
+      - SEQ_FIRSTRUN_ADMINPASSWORD=yourStrongPassword 
+    volumes:
+      - seq-data:/data
+    ports:
+      - "8001:80"  
+
+volumes:
+  seq-data:
