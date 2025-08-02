@@ -15,7 +15,7 @@ Tài liệu và script đi kèm các video trên kênh YouTube của tôi – h�
 | [ChatGPT Prompt Manager](https://github.com/khoidang2110/chatgpt-prompt-manager) | Quản lý và tái sử dụng prompt hiệu quả. |
 | [Docker Port Controller](./docker-port-controller/README.md) | Tắt/mở port PostgreSQL tùy nhu cầu thao tác DB, tránh brute force, dữ liệu vẫn giữ bằng volume. |
 | [Traefik](./traefik/README.md) | Hướng dẫn cài đặt traefik. |
-| [Docker swarm](./docker-swarm/readme.md) | So sánh hiệu suất Docker và Docker Swarm. |
+| [Docker swarm](./docker-swarm) | So sánh hiệu suất Docker và Docker Swarm. |
 ---
 
 ## 🎯 Mục tiêu
