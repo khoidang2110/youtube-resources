@@ -8,13 +8,13 @@ Tài liệu và script đi kèm các video trên kênh YouTube của tôi – h�
 
 | Công cụ / Chủ đề | Mô tả |
 |------------------|-------|
-| [Zabbix](./zabbix/README.md) | Hướng dẫn cài đặt hệ thống giám sát Zabbix. |
-| [Harbor](./harbor/README.md) | Cài đặt Docker registry Harbor để quản lý image. |
-| [Seq](./seq/README.md) | Thiết lập hệ thống log tập trung với Seq. |
-| [Tự host tại nhà](./self-hosted-server/README.md) | Hướng dẫn tự triển khai máy chủ tại nhà. |
+| [Zabbix](./zabbix) | Hướng dẫn cài đặt hệ thống giám sát Zabbix. |
+| [Harbor](./harbor) | Cài đặt Docker registry Harbor để quản lý image. |
+| [Seq](./seq) | Thiết lập hệ thống log tập trung với Seq. |
+| [Tự host tại nhà](./self-hosted-server) | Hướng dẫn tự triển khai máy chủ tại nhà. |
 | [ChatGPT Prompt Manager](https://github.com/khoidang2110/chatgpt-prompt-manager) | Quản lý và tái sử dụng prompt hiệu quả. |
-| [Docker Port Controller](./docker-port-controller/README.md) | Tắt/mở port PostgreSQL tùy nhu cầu thao tác DB, tránh brute force, dữ liệu vẫn giữ bằng volume. |
-| [Traefik](./traefik/README.md) | Hướng dẫn cài đặt traefik. |
+| [Docker Port Controller](./docker-port-controller) | Tắt/mở port PostgreSQL tùy nhu cầu thao tác DB, tránh brute force, dữ liệu vẫn giữ bằng volume. |
+| [Traefik](./traefik) | Hướng dẫn cài đặt traefik. |
 | [Docker swarm](./docker-swarm) | So sánh hiệu suất Docker và Docker Swarm. |
 ---
 
