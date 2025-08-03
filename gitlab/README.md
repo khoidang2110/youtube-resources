@@ -69,6 +69,10 @@ git remote add origin ssh://git@john2110.ddns.net:8004/john/masterworkgitlab.git
 
 # Push code lên GitLab
 git push -u origin main
+
+
+# Nếu gặp lỗi ko pull được code thì chạy lệnh: 
+git pull --rebase
 ```
 
 ## IV. TẠO SSH KEY ĐỂ KẾT NỐI VPS2
