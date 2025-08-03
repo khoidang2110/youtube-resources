@@ -70,9 +70,15 @@ git remote add origin ssh://git@john2110.ddns.net:8004/john/masterworkgitlab.git
 # Push code lên GitLab
 git push -u origin main
 
+# GIẢI QUYẾT XUNG ĐỘT LỊCH SỬ (nếu cần):
+# Khi GitLab tự tạo repository với README.md còn code từ GitHub không có file này,
+# sẽ xảy ra xung đột lịch sử commit:
 
-# Nếu gặp lỗi ko pull được code thì chạy lệnh: 
-git pull --rebase
+# Rebase (khuyến nghị) - giữ lịch sử commit sạch
+git pull --rebase origin main
+
+# Sau đó push lại
+git push origin main
 ```
 
 ## IV. TẠO SSH KEY ĐỂ KẾT NỐI VPS2
@@ -231,11 +237,17 @@ sudo gitlab-runner restart
 - Đảm bảo copy đúng format private key
 - Không có thêm space hoặc newline
 
+**Xung đột lịch sử Git:**
+- Khi GitLab tự tạo README.md mà code gốc không có
+- Sử dụng `git pull --rebase` để giải quyết
+- Hoặc force push nếu muốn ghi đè: `git push --force origin main`
+
 ## NOTES
 - GitLab khởi động khá lâu, hãy kiên nhẫn chờ
 - Đảm bảo port 8003 và 8004 đã được mở trên firewall
 - Private key phải được bảo mật tuyệt đối
 - Nên sử dụng protected variables cho thông tin nhạy cảm
+- Rebase giúp giữ lịch sử commit sạch sẽ hơn so với merge
 
 ## LIÊN HỆ
 - Nếu gặp vấn đề, check logs: `docker logs gitlab`
