@@ -16,6 +16,8 @@ Tài liệu và script đi kèm các video trên kênh YouTube của tôi – h�
 | [Docker Port Controller](./docker-port-controller) | Tắt/mở port PostgreSQL tùy nhu cầu thao tác DB, tránh brute force, dữ liệu vẫn giữ bằng volume. |
 | [Traefik](./traefik) | Hướng dẫn cài đặt traefik. |
 | [Docker swarm](./docker-swarm) | So sánh hiệu suất Docker và Docker Swarm. |
+| [Gitlab](./gitlab) | Tự host GitLab. |
+
 ---
 
 ## 🎯 Mục tiêu
