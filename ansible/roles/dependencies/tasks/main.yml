@@ -1,0 +1,11 @@
+---
+- name: Update apt cache and install dependencies 💖
+  ansible.builtin.apt:
+    name:
+      - php-fpm
+      - php-mysql
+      - unzip
+      - curl
+      - tree
+    state: present
+    update_cache: yes
