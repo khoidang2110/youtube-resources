@@ -45,22 +45,17 @@ Cài đặt wifi nếu không có cổng LAN (dùng card WiFi onboard)
 🧾 Cấu hình mạng (VD: /etc/netplan/01-netcfg.yaml):
 
 ```bash
-network:
-  version: 2
-  renderer: networkd
-  wifis:
-    wlp2s0:
-      optional: true
-      access-points:
-        "TEN_WIFI_CUA_BAN":
-          password: "MAT_KHAU_WIFI"
-      dhcp4: no
-      addresses: [192.168.1.42/24]
-      gateway4: 192.168.1.1
-      nameservers:
-        addresses: [8.8.8.8, 1.1.1.1]
+cấu hình theo 2 file đính kèm là 01-wifi.yaml hoặc 02-lan.yaml
 ```
 Lưu file, chạy sudo netplan apply
+
+cấp quyền cho file cấu hình: 
+
+sudo chmod 600 /etc/netplan/01-wifi.yaml
+
+sau dó apply:
+
+sudo netplan apply
 
 Dùng lệnh "ip a" để xem card mạng: wlp2s0, enp9s31f6, v.v.
 
