@@ -17,6 +17,8 @@ Tài liệu và script đi kèm các video trên kênh YouTube của tôi – h�
 | [Traefik](./traefik) | Hướng dẫn cài đặt traefik. |
 | [Docker swarm](./docker-swarm) | So sánh hiệu suất Docker và Docker Swarm. |
 | [Gitlab](./gitlab) | Tự host GitLab. |
+| [MinIO](./minio) | Upload web tĩnh lên minIO. |
+
 
 ---
 
