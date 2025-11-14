@@ -1,28 +1,27 @@
 version: "3.8"
 
 services:
-  nextjs:
+  samar-web-app:
     build:
       context: .
-    container_name: nextjs-app
+    container_name: web-web-app
     ports:
       - "3000:3000"
     labels:
       - "traefik.enable=true"
 
       # Domain
-      - "traefik.http.routers.nextjs.rule=Host(`traefik.tichluyvang.com`)"
+      - "traefik.http.routers.samar.rule=Host(`traefik.tichluyvang.com`)"
 
       # Entrypoints CHUẨN KHỚP với traefik.yml
-      - "traefik.http.routers.nextjs.entrypoints=https"
-      - "traefik.http.routers.nextjs.tls.certresolver=letsencrypt"
-
+      - "traefik.http.routers.samar.entrypoints=https"
+      - "traefik.http.routers.samar.tls.certresolver=letsencrypt"
       # Service port NextJS
-      - "traefik.http.services.nextjs.loadbalancer.server.port=3000"
+      - "traefik.http.services.samar.loadbalancer.server.port=3000"
 
       # Router HTTP phục vụ ACME
-      - "traefik.http.routers.nextjs-http.rule=Host(`traefik.tichluyvang.com`)"
-      - "traefik.http.routers.nextjs-http.entrypoints=http"
+      - "traefik.http.routers.samar-http.rule=Host(`traefik.tichluyvang.com`)"
+      - "traefik.http.routers.samar-http.entrypoints=http"
     networks:
       - traefik
 
