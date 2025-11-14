@@ -18,7 +18,8 @@ Tài liệu và script đi kèm các video trên kênh YouTube của tôi – h�
 | [Docker swarm](./docker-swarm) | So sánh hiệu suất Docker và Docker Swarm. |
 | [Gitlab](./gitlab) | Tự host GitLab. |
 | [MinIO](./minio) | Upload web tĩnh lên minIO. |
-
+| [CI/CD 1 server](./samar-cicd) | Triển khai CI/CD với GitHub Actions trên 1 server. |
+| [CI/CD 2 server](./samar-cicd2) | Triển khai CI/CD tách biệt CI và Deploy trên 2 server. |
 
 ---
 

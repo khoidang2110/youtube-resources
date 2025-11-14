@@ -1,0 +1,54 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Deploy on remote Server via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: john2110.ddns.net
+          username: khoi
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 2222
+          script: |
+            set -euo pipefail
+
+            DEPLOY_PATH=/home/share/samar-cicd
+            echo "📂 Deploy path: $DEPLOY_PATH"
+
+            # Check if directory exists
+            if [ ! -d "$DEPLOY_PATH" ]; then
+              echo "❌ ERROR: Directory does not exist: $DEPLOY_PATH"
+              exit 1
+            fi
+
+            cd "$DEPLOY_PATH"
+
+            # Check if git repository exists
+            if [ ! -d "$DEPLOY_PATH/.git" ]; then
+              echo "❌ ERROR: Not a git repository. Please clone manually first."
+              exit 1
+            fi
+
+            echo "🔄 Pulling latest code from origin/main..."
+            git pull origin main
+
+            echo "🐳 Restarting Docker containers..."
+            docker compose down
+            docker compose up -d --build
+
+            echo "🧹 Cleaning up unused Docker images..."
+            docker image prune -f || true
+
+            echo "✅ Deployment completed!"
+            echo "🏥 Checking service health..."
+            sleep 3
+            curl -f http://localhost:8006/ || echo "⚠️  Warning: Health check failed"
