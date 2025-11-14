@@ -6,7 +6,7 @@ services:
       context: .
     container_name: nextjs-app
     ports:
-      - "3000:80"
+      - "3000:3000"
     labels:
       - "traefik.enable=true"
 
