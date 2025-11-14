@@ -1,27 +1,29 @@
-version: '3.8'
+version: "3.8"
 
 services:
   nextjs:
     build:
-      context: .  # Chỉ định thư mục chứa Dockerfile của bạn
+      context: .
     container_name: nextjs-app
-    ports:
-      - "3000:3000"  # Mở cổng 3000 để có thể truy cập vào Next.js từ bên trong container
     labels:
+      - "traefik.enable=true"
 
+      # Domain
+      - "traefik.http.routers.nextjs.rule=Host(`traefik.tichluyvang.com`)"
 
+      # Entrypoints CHUẨN KHỚP với traefik.yml
+      - "traefik.http.routers.nextjs.entrypoints=https"
+      - "traefik.http.routers.nextjs.tls.certresolver=letsencrypt"
 
-      - 'traefik.enable=true'
-      - 'traefik.docker.network=traefik'
-      - 'traefik.http.routers.nextjs.entrypoints=http'
-      - 'traefik.http.routers.nextjs.rule=Host(`traefik.tichluyvang.com`)'
-      - 'traefik.http.routers.nextjs-secure.entrypoints=https'
-      - 'traefik.http.routers.nextjs-secure.rule=Host(`traefik.tichluyvang.com`)'
-      - 'traefik.http.routers.nextjs-secure.tls.certresolver=letsencrypt'
+      # Service port NextJS
+      - "traefik.http.services.nextjs.loadbalancer.server.port=3000"
 
+      # Router HTTP phục vụ ACME
+      - "traefik.http.routers.nextjs-http.rule=Host(`traefik.tichluyvang.com`)"
+      - "traefik.http.routers.nextjs-http.entrypoints=http"
     networks:
-      - traefik  # Kết nối container Next.js với network traefik
+      - traefik
 
 networks:
   traefik:
-    external: true  # Đảm bảo Traefik và các dịch vụ container sử dụng cùng mạng này
+    external: true
