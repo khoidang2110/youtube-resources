@@ -14,9 +14,9 @@ services:
       - 'traefik.enable=true'
       - 'traefik.docker.network=traefik'
       - 'traefik.http.routers.nextjs.entrypoints=http'
-      - 'traefik.http.routers.nextjs.rule=Host(`traefik.tinhtisonen.com`)'
+      - 'traefik.http.routers.nextjs.rule=Host(`traefik.tichluyvang.com`)'
       - 'traefik.http.routers.nextjs-secure.entrypoints=https'
-      - 'traefik.http.routers.nextjs-secure.rule=Host(`traefik.tinhtisonen.com`)'
+      - 'traefik.http.routers.nextjs-secure.rule=Host(`traefik.tichluyvang.com`)'
       - 'traefik.http.routers.nextjs-secure.tls.certresolver=letsencrypt'
 
     networks:
